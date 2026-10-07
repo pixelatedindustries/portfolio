@@ -1,0 +1,13 @@
+# The site is deployed with the repo root as the assets directory, so
+# everything here is public unless listed below (same syntax as .gitignore).
+
+# Git metadata
+.git
+.gitignore
+
+# Deploy config and tooling output generated at build time
+wrangler.jsonc
+wrangler.json
+wrangler.toml
+.wrangler/
+node_modules/
