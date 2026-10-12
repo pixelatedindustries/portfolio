@@ -2804,7 +2804,7 @@ const TOSS_TIME = 0.42; // seconds for a part swept off the board to land back w
 const HAMMER_LENGTH = Math.hypot(...sub(HAMMER.head, HAMMER.grip));
 
 const MODELS = [
-  // CaseMap Next Gen: a camera on a tripod.
+  // Legal Dashboard: a camera on a tripod.
   {
     strike: [1, 25, -4],
     parts: [
@@ -7268,9 +7268,9 @@ requestAnimationFrame(frame);
 // and its screens in cases/.
 const projectData = [
   {
-    slug: 'casemap',
-    title: 'CaseMap Next Gen',
-    description: 'Built for LexisNexis: the next generation of CaseMap, their legal case analysis tool, as a case dashboard you arrange yourself. Drag any panel and resize it from its edges or corners, swap bars for donuts, dock the tiles and navigation to any side, and save the layout as a template for new cases. Every move works from the keyboard too. The demo runs on mock data.',
+    slug: 'legal-dashboard',
+    title: 'Legal Dashboard',
+    description: 'Built for business: Legal Dashboard, a legal case analysis tool, as a case dashboard you arrange yourself. Drag any panel and resize it from its edges or corners, swap bars for donuts, dock the tiles and navigation to any side, and save the layout as a template for new cases. Every move works from the keyboard too. The demo runs on mock data. Generic names are used for privacy protection.',
     role: 'Design & development',
     tools: 'Angular, TypeScript, Vercel',
     frontEnd: ['Angular 22', 'TypeScript', 'Standalone components', 'Signals', 'Zoneless Angular', 'Tailwind CSS', 'RxJS patterns', 'Electron desktop shell'],

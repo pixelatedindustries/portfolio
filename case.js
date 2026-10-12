@@ -131,25 +131,25 @@
       end: 'It’s live, with a demo calendar to explore.',
       bye: 'That’s the tour. Stay on beat!',
     },
-    casemap: {
-      hello: 'CaseMap Next Gen! All mock data, before you ask.',
+    'legal-dashboard': {
+      hello: 'Legal Dashboard! All mock data, before you ask.',
       brief: {
         problem: 'Every legal team works a case its own way, but a fixed dashboard shows everyone the same panels in the same places, whether they need them or not.',
         approach: 'I made the whole dashboard theirs to arrange: panels to drag, resize and hide, charts to switch, tiles and navigation to dock on any side, and layouts saved as templates for the next case. Every one of those moves works from the keyboard as well as the mouse.',
-        outcome: 'A working next generation of CaseMap, built in Angular for LexisNexis, that runs in the browser and as a desktop app. The live demo uses a mock case.',
+        outcome: 'A working next generation Legal Dashboard, built in Angular for business, that runs in the browser and as a desktop app. The live demo uses a mock case. Generic names are used for privacy protection.',
       },
       screens: [
         {
-          file: 'casemap-1', path: '/dashboard', title: 'A dashboard you arrange',
+          file: 'legal-dashboard-1', path: '/dashboard', title: 'A dashboard you arrange',
           text: 'Every panel on the case dashboard can be dragged, resized from any edge or corner, hidden, or switched between bar and donut charts, and the metric tiles dock along the top or down the side. Every move works from the keyboard too.',
           say: 'Grab a panel by its dots and drag it anywhere.',
-          alt: 'CaseMap Next Gen dashboard: metric tiles for facts, documents and issues above case strength, fact activity and upcoming deadlines panels.',
+          alt: 'Legal Dashboard: metric tiles for facts, documents and issues above case strength, fact activity and upcoming deadlines panels.',
         },
         {
-          file: 'casemap-2', path: '/facts', title: 'Case facts',
+          file: 'legal-dashboard-2', path: '/facts', title: 'Case facts',
           text: 'The facts of the case in a table to sort and filter, coloured by whether each one helps or hurts.',
           say: '44 facts, and I’m not in any of them.',
-          alt: 'CaseMap case facts: a table of dated facts to filter, with how each is evaluated and who it involves.',
+          alt: 'Legal Dashboard case facts: a table of dated facts to filter, with how each is evaluated and who it involves.',
         },
       ],
       frontEnd: 'Angular with signals, and no zone.js. Snappy.',
@@ -200,6 +200,7 @@
       bye: 'That’s the tour. GG!',
     },
   };
+  CASES.casemap = CASES['legal-dashboard'];
 
   /* ------------------------------------------------------ how he moves */
 
