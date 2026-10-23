@@ -3430,7 +3430,7 @@ const CAREER = [
     title: ['Systems', 'Engineer'], note: 'Pet Plus',
     say: ['Now I build their systems.', 'Their shop loads in 1 second, not 40.'],
     result: 'Shop loads in 1s, not 40s · $5,000+ saved',
-    summary: 'Built custom in-house software saving $5,000+ (R82,200). Rebuilt company web storefront with Cloudflare DNS slashing LCP from 40s to ~1s, created Lightspeed financial dashboards, and developed DOM injection tools.',
+    summary: 'Built custom in-house software saving $5,000+ (R82,200). Rebuilt web storefront with Cloudflare DNS slashing LCP from 40s to ~1s, created Lightspeed financial dashboards, and developed DOM injection tools.',
   },
 ];
 const CLIMB_HIP = 102; // his hip above the foot of a climb before he rises
@@ -7270,11 +7270,11 @@ const projectData = [
   {
     slug: 'legal-dashboard',
     title: 'Legal Dashboard',
-    description: 'Built for business: Legal Dashboard, a legal case analysis tool, as a case dashboard you arrange yourself. Drag any panel and resize it from its edges or corners, swap bars for donuts, dock the tiles and navigation to any side, and save the layout as a template for new cases. Every move works from the keyboard too. The demo runs on mock data. Generic names are used for privacy protection.',
+    description: 'A configurable legal case analysis tool designed as a case dashboard you arrange yourself. Drag any panel and resize it from its edges or corners, swap bars for donuts, dock the tiles and navigation to any side, and save the layout as a template for new cases. Every move works from the keyboard too. The demo runs on mock data. Generic names are used for privacy protection.',
     role: 'Design & development',
     tools: 'Angular, TypeScript, Vercel',
     frontEnd: ['Angular 22', 'TypeScript', 'Standalone components', 'Signals', 'Zoneless Angular', 'Tailwind CSS', 'RxJS patterns', 'Electron desktop shell'],
-    url: 'https://casemap-next-gen.vercel.app',
+    url: '#work/legal-dashboard',
   },
   {
     slug: 'chiisai',
@@ -7352,7 +7352,15 @@ function selectProject(index, focus = false) {
   }));
   const link = projectDetail.querySelector('.project-link');
   link.href = item.url;
-  link.setAttribute('aria-label', `View ${item.title} (opens in a new tab)`);
+  if (item.url.startsWith('#')) {
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    link.setAttribute('aria-label', `View ${item.title}`);
+  } else {
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.setAttribute('aria-label', `View ${item.title} (opens in a new tab)`);
+  }
   projectDetail.querySelector('.project-case').setAttribute('aria-label', `Detailed view of ${item.title}`);
   if (focus) projectTabs[index].focus();
   build.wanted = index; // he builds it on the bench while the sheet is open
@@ -7462,7 +7470,7 @@ const skillData = [
   {
     slug: 'systems',
     title: 'Systems & Scripting',
-    description: 'Keeping a company running: its servers, Microsoft 365 and Google Workspace for the whole team, single sign on, and scripts for the dull jobs.',
+    description: 'Keeping business infrastructure running: servers, Microsoft 365 and Google Workspace for the whole team, single sign on, and scripts for the dull jobs.',
     tags: ['Windows Server', 'Microsoft 365 admin', 'Google Workspace admin', 'SSO (SAML, OAuth, LDAP)', 'Python', 'PowerShell', 'Bash', 'C#', 'Java'],
   },
 ];

@@ -136,7 +136,7 @@
       brief: {
         problem: 'Every legal team works a case its own way, but a fixed dashboard shows everyone the same panels in the same places, whether they need them or not.',
         approach: 'I made the whole dashboard theirs to arrange: panels to drag, resize and hide, charts to switch, tiles and navigation to dock on any side, and layouts saved as templates for the next case. Every one of those moves works from the keyboard as well as the mouse.',
-        outcome: 'A working next generation Legal Dashboard, built in Angular for business, that runs in the browser and as a desktop app. The live demo uses a mock case. Generic names are used for privacy protection.',
+        outcome: 'A configurable next-generation Legal Dashboard, built in Angular with signals and a zoneless architecture, that runs in the browser and as a desktop app. The live demo uses a mock case. Generic names are used for privacy protection.',
       },
       screens: [
         {
@@ -200,7 +200,6 @@
       bye: 'That’s the tour. GG!',
     },
   };
-  CASES.casemap = CASES['legal-dashboard'];
 
   /* ------------------------------------------------------ how he moves */
 
