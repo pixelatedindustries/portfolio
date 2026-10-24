@@ -284,7 +284,15 @@
     index = i;
     const item = projectData[i];
     const c = CASES[item.slug] || { screens: [] };
-    const host = new URL(item.url).host;
+    let host = 'legal-dashboard.app';
+    try {
+      const u = new URL(item.url, window.location.href);
+      host = (item.slug === 'legal-dashboard' || u.host.includes('casemap'))
+        ? 'legal-dashboard.app'
+        : u.host;
+    } catch {
+      host = item.slug === 'legal-dashboard' ? 'legal-dashboard.app' : '';
+    }
     // The switcher in the bar: every project, this one chosen.
     if (select.options.length !== projectData.length) {
       select.replaceChildren(...projectData.map((p, n) => {
@@ -294,8 +302,15 @@
       }));
     }
     select.value = String(i);
-    visit.href = item.url;
-    visit.setAttribute('aria-label', `Visit ${item.title}, live (opens in a new tab)`);
+    const isExternal = Boolean(item.url && !item.url.startsWith('#'));
+    if (isExternal) {
+      visit.href = item.url;
+      visit.setAttribute('aria-label', `Visit ${item.title}, live (opens in a new tab)`);
+      visit.style.display = '';
+    } else {
+      visit.removeAttribute('href');
+      visit.style.display = 'none';
+    }
     lanes = [];
     laneLines = [];
 
@@ -359,15 +374,18 @@
     lane([c.bye]);
     const end = el('section', 'case__section');
     const actions = el('div', 'case__end');
-    const live = el('a', '', 'Visit the live site ↗');
-    live.href = item.url;
-    live.target = '_blank';
-    live.rel = 'noopener';
+    if (isExternal) {
+      const live = el('a', '', 'Visit the live site ↗');
+      live.href = item.url;
+      live.target = '_blank';
+      live.rel = 'noopener';
+      actions.append(live);
+    }
     const nextIndex = (i + 1) % projectData.length;
     const next = el('button', '', `Next: ${projectData[nextIndex].title} →`);
     next.type = 'button';
     next.addEventListener('click', () => turnTo(nextIndex));
-    actions.append(live, next);
+    actions.append(next);
     end.append(el('h2', '', 'Have a go'), el('p', '', c.end || 'It’s live.'), actions);
     parts.push(end);
 
@@ -783,6 +801,13 @@
   projectDetail.querySelector('.project-case')?.addEventListener('click', () => {
     sfx.tick?.(true);
     openCase(currentIndex());
+  });
+  projectDetail.querySelector('.project-link')?.addEventListener('click', (e) => {
+    if (projectData[currentIndex()]?.url?.startsWith('#')) {
+      e.preventDefault();
+      sfx.tick?.(true);
+      openCase(currentIndex());
+    }
   });
   back.addEventListener('click', requestClose);
   // The switcher: pick a project, or step to the one either side.
