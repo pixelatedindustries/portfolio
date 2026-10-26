@@ -6,7 +6,7 @@
     <title>Naeem Brown · CV</title>
     <meta
       name="description"
-      content="CV of Naeem Brown, frontend engineer in Cape Town, South Africa."
+      content="CV of Naeem Brown, frontend engineer and UI/UX developer in Cape Town, South Africa."
     />
     <!-- The printable CV. Headless Chrome prints this page to
          cv/Naeem-Brown-CV.pdf; change the words here, then print it again:
@@ -56,10 +56,10 @@
         width: 210mm;
         min-height: 297mm;
         margin: 0 auto;
-        padding: 9mm 15mm 5.5mm;
+        padding: 8mm 14mm 5mm;
         background: var(--sheet);
         color: var(--ink);
-        font: 9.1pt/1.35 var(--font-body);
+        font: 8.8pt/1.33 var(--font-body);
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -93,7 +93,9 @@
       h3,
       p,
       ul,
-      ol {
+      ol,
+      dl,
+      dd {
         margin: 0;
       }
 
@@ -101,57 +103,58 @@
 
       .masthead {
         position: relative;
-        margin-bottom: 9pt;
+        margin-bottom: 7pt;
       }
 
       .masthead h1 {
-        font: 700 30pt/1 var(--font-display);
+        font: 700 28pt/1 var(--font-display);
         letter-spacing: 0.02em;
-        padding-bottom: 5pt;
+        padding-bottom: 4pt;
       }
 
       /* The slab the letters stand on, with the job cut into it. */
       .masthead__plinth {
-        border-top: 1.4pt solid var(--ink);
-        border-bottom: 1.4pt solid var(--ink);
+        border-top: 1.3pt solid var(--ink);
+        border-bottom: 1.3pt solid var(--ink);
         background: var(--stone);
-        padding: 2.6pt 0 2.2pt;
+        padding: 2.2pt 0 1.8pt;
         text-align: center;
       }
 
       .masthead__role {
-        font: 700 7.4pt/1.2 var(--font-label);
-        letter-spacing: 0.16em;
+        font: 700 7.2pt/1.2 var(--font-label);
+        letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #4c4a45;
       }
 
       .masthead__contact {
-        margin-top: 6pt;
-        font: 8.4pt/1.4 var(--font-label);
+        margin-top: 5pt;
+        font: 8.1pt/1.35 var(--font-label);
         color: var(--muted-ink);
         text-align: center;
       }
 
       .masthead__contact span + span::before {
-        content: "·";
-        margin: 0 0.55em;
+        content: "•";
+        margin: 0 0.5em;
         color: #b3aea4;
       }
 
       /* ---------------------------------------------------- sections */
 
       section + section {
-        margin-top: 8pt;
+        margin-top: 6.5pt;
       }
 
       h2 {
         display: flex;
         align-items: center;
         gap: 8pt;
-        margin-bottom: 5pt;
-        font: 700 12.5pt/1 var(--font-display);
+        margin-bottom: 4pt;
+        font: 700 11.5pt/1 var(--font-display);
         letter-spacing: 0.03em;
+        text-transform: uppercase;
       }
 
       h2::after {
@@ -161,13 +164,40 @@
       }
 
       .summary {
-        font-size: 9.3pt;
+        font-size: 8.8pt;
+        line-height: 1.35;
+      }
+
+      /* ---------------------------------------------------- technical skills */
+
+      .skills-table {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8pt;
+        font: 8.1pt/1.32 var(--font-label);
+      }
+
+      .skills-row {
+        display: flex;
+        align-items: baseline;
+        gap: 8pt;
+      }
+
+      .skills-label {
+        flex: 0 0 120pt;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      .skills-value {
+        flex: 1;
+        color: #383632;
       }
 
       /* The small spaced labels of the site's project sheet (Role, Tools). */
       .label {
-        margin-right: 0.6em;
-        font: 700 6.8pt/1 var(--font-label);
+        margin-right: 0.5em;
+        font: 700 6.6pt/1 var(--font-label);
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--muted-ink);
@@ -176,12 +206,12 @@
       .entry-head {
         display: flex;
         align-items: baseline;
-        gap: 6pt;
-        margin-bottom: 1.5pt;
+        gap: 5pt;
+        margin-bottom: 1.2pt;
       }
 
       .entry-head h3 {
-        font: 700 10pt/1.25 var(--font-body);
+        font: 700 9.4pt/1.25 var(--font-body);
       }
 
       .entry-head .sep {
@@ -197,13 +227,13 @@
       .entry-head .url {
         margin-left: auto;
         white-space: nowrap;
-        font: 8.2pt/1.25 var(--font-label);
+        font: 8pt/1.25 var(--font-label);
         color: var(--muted-ink);
       }
 
       .entry-head .dates {
         font-weight: 700;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.05em;
       }
 
       ul.points {
@@ -222,6 +252,13 @@
         color: var(--muted-ink);
       }
 
+      ul.points strong {
+        font-family: var(--font-label);
+        font-size: 8.3pt;
+        font-weight: 700;
+        color: var(--ink);
+      }
+
       /* ---------------------------------------------------- experience: the timetable's line */
 
       .timetable {
@@ -231,7 +268,7 @@
 
       .timetable > li {
         position: relative;
-        padding: 0 0 5.5pt 15pt;
+        padding: 0 0 4.5pt 14pt;
         break-inside: avoid;
       }
 
@@ -240,7 +277,7 @@
         content: "";
         position: absolute;
         left: 3.4pt;
-        top: 7pt;
+        top: 6pt;
         bottom: -3pt;
         border-left: 1.2pt solid var(--ink);
       }
@@ -258,9 +295,9 @@
         content: "";
         position: absolute;
         left: 0;
-        top: 3pt;
-        width: 7.2pt;
-        height: 7.2pt;
+        top: 2.5pt;
+        width: 7pt;
+        height: 7pt;
         border: 1.3pt solid var(--ink);
         border-radius: 50%;
         background: var(--sheet);
@@ -278,7 +315,7 @@
       }
 
       .projects > li {
-        padding: 3pt 0;
+        padding: 2.8pt 0;
         border-top: 1px solid var(--rule);
         break-inside: avoid;
       }
@@ -289,16 +326,34 @@
       }
 
       .projects .tools {
-        margin-top: 1.5pt;
-        font: 8.2pt/1.35 var(--font-label);
+        margin-bottom: 1.2pt;
+        font: 7.9pt/1.3 var(--font-label);
+        color: var(--muted-ink);
       }
 
-      /* ---------------------------------------------------- skills */
+      .projects .tools .tools-list {
+        color: #383632;
+      }
 
-      .skills p {
+      .project-subtitle {
+        font-family: var(--font-label);
+        font-size: 8.2pt;
+        font-weight: 400;
+        color: var(--muted-ink);
+      }
+
+      /* ---------------------------------------------------- education */
+
+      .education-list {
+        list-style: none;
         padding: 0;
-        margin-top: 2.6pt;
-        font: 8.6pt/1.45 var(--font-label);
+        display: flex;
+        flex-direction: column;
+        gap: 2pt;
+      }
+
+      .education-list > li {
+        break-inside: avoid;
       }
     </style>
   </head>
@@ -318,13 +373,13 @@
         >
         <span><a href="https://naeembrown.com">naeembrown.com</a></span>
         <span
-          ><a href="https://linkedin.com/in/naeembrown544"
-            >linkedin.com/in/naeembrown544</a
+          ><a href="https://github.com/NaeemBrown"
+            >github.com/NaeemBrown</a
           ></span
         >
         <span
-          ><a href="https://github.com/NaeemBrown"
-            >github.com/NaeemBrown</a
+          ><a href="https://linkedin.com/in/naeembrown544"
+            >linkedin.com/in/naeembrown544</a
           ></span
         >
       </p>
@@ -333,12 +388,57 @@
     <section>
       <h2>Professional Summary</h2>
       <p class="summary">
-        Frontend engineer with six years of experience building responsive
-        web applications, internal tools and systems integrations. Delivered
-        more than $5,000 in software cost savings and reduced Largest Contentful
-        Paint from 40 seconds to approximately one second using TypeScript,
-        modern JavaScript frameworks, cloud platforms and user-centred design.
+        Frontend Engineer and UI/UX Developer with six years of experience
+        designing and building responsive web applications, interactive 3D
+        interfaces, and internal SaaS tools. Proven track record of translating
+        complex UX requirements into accessible, high-performance interfaces
+        using TypeScript, React, Vue/Nuxt, Angular, and Tailwind CSS. Reduced
+        e-commerce Largest Contentful Paint (LCP) by 97.5% (from 40s to ~1s) and
+        delivered over $5,000 (R82,200) in annual software cost savings through
+        custom frontend tooling and API integrations.
       </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-table">
+        <div class="skills-row">
+          <span class="skills-label">Frontend Core</span>
+          <span class="skills-value"
+            >TypeScript, JavaScript (ES6+), React, Vue, Nuxt, Angular, HTML5,
+            CSS3, Tailwind CSS, Progressive Web Apps (PWA)</span
+          >
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">UI/UX &amp; Accessibility</span>
+          <span class="skills-value"
+            >Figma, UI/UX Design, User-Centred Design, Interactive Prototyping,
+            Wireframing, Design Systems, Responsive Web Design, Keyboard
+            Accessibility</span
+          >
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">3D &amp; Motion UI</span>
+          <span class="skills-value"
+            >Three.js (WebGL), TresJS, GSAP, Interactive 3D Environments, Twitch
+            Embed Integrations</span
+          >
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Backend &amp; Data</span>
+          <span class="skills-value"
+            >Supabase, Firebase, SQL, REST APIs, OAuth 2.0, Colyseus
+            (WebSockets), Shopify, Lightspeed POS, Python, C#, Java</span
+          >
+        </div>
+        <div class="skills-row">
+          <span class="skills-label">Cloud &amp; DevOps</span>
+          <span class="skills-value"
+            >Cloudflare, Vercel, Netlify, Microsoft Azure, Docker, Git, GitHub,
+            PowerShell, Bash</span
+          >
+        </div>
+      </div>
     </section>
 
     <section>
@@ -346,46 +446,49 @@
       <ol class="timetable">
         <li class="is-current">
           <div class="entry-head">
-            <h3>Systems Engineer</h3>
+            <h3>Frontend &amp; Systems Engineer</h3>
             <span class="sep">|</span><span class="where">Pet Plus</span>
             <span class="dates">2025 – Present</span>
           </div>
           <ul class="points">
             <li>
-              Developed custom internal software that reduced operational costs by
-              more than $5,000 (R82,200).
+              <strong>Storefront Performance Overhaul:</strong> Rebuilt the web
+              storefront UI and configured Cloudflare caching, reducing Largest
+              Contentful Paint (LCP) by 97.5% from 40 seconds to approximately 1
+              second.
             </li>
             <li>
-              Rebuilt the web storefront and configured Cloudflare,
-              reducing Largest Contentful Paint from 40 seconds to approximately
-              one second (97.5%).
+              <strong>Workforce Progressive Web App:</strong> Designed and built
+              an installable React and Supabase staff PWA (in dev) with Google
+              OAuth 2.0 authentication for shift rosters, clock-ins, and daily
+              store routines.
             </li>
             <li>
-              Built financial dashboards for Lightspeed POS and Shopify, plus
-              internal tooling that embeds custom applications in Lightspeed.
+              <strong>Custom Dashboards &amp; Internal Tooling:</strong> Engineered
+              financial dashboards for Lightspeed POS and Shopify alongside
+              embedded custom applications inside Lightspeed, reducing operational
+              software costs by more than $5,000 (R82,200).
             </li>
           </ul>
         </li>
         <li>
           <div class="entry-head">
-            <h3>Infrastructure Engineer</h3>
+            <h3>Full-Stack &amp; Integrations Engineer (Infrastructure Engineer)</h3>
             <span class="sep">|</span><span class="where">Pet Plus</span>
             <span class="dates">2022 – 2025</span>
           </div>
           <ul class="points">
             <li>
-              Established core IT infrastructure, including
-              internal systems, code repositories and Google Workspace
-              administration.
+              <strong>E-Commerce Synchronization:</strong> Designed and
+              implemented the first automated synchronization pipeline between
+              Lightspeed POS and Shopify, keeping multi-store inventory and
+              sales data aligned.
             </li>
             <li>
-              Designed and implemented the first automated
-              synchronization between Lightspeed POS and Shopify, keeping
-              inventory and sales data aligned.
-            </li>
-            <li>
-              Negotiated partner API access and integrations connecting
-              third-party business systems.
+              <strong>API Integrations &amp; Architecture:</strong> Negotiated
+              partner API access and built custom integrations connecting
+              third-party business systems, internal code repositories, and
+              cloud infrastructure.
             </li>
           </ul>
         </li>
@@ -398,7 +501,7 @@
           <ul class="points">
             <li>
               Designed and developed responsive websites and web applications
-              using Vue, Nuxt, React, TypeScript and Tailwind CSS.
+              using Vue, Nuxt, React, TypeScript, and Tailwind CSS.
             </li>
             <li>
               Translated UX requirements into reusable, developer-friendly
@@ -410,104 +513,76 @@
     </section>
 
     <section>
-      <h2>Projects</h2>
+      <h2>Featured UI/UX &amp; Frontend Projects</h2>
       <ul class="projects">
         <li>
           <div class="entry-head">
-            <h3>Legal Dashboard</h3>
-            <span class="sep">|</span
-            ><span class="where">Enterprise Legal Tech</span>
+            <h3>Legal Dashboard <span class="project-subtitle">— UI/UX Design Prototype</span></h3>
             <a class="url" href="https://naeembrown.com/#work/legal-dashboard"
               >Live Demo</a
             >
           </div>
+          <p class="tools">
+            <span class="label">Tools</span><span class="tools-list">Angular, TypeScript, UI/UX Design, Vercel</span>
+          </p>
           <p>
             Designed and prototyped a configurable legal case-analysis dashboard
-            with drag-and-resize panels, switchable charts, docked navigation,
-            saved layouts and full keyboard control. Generic names are used for privacy protection.
-          </p>
-          <p class="tools">
-            <span class="label">Tools</span>Angular, TypeScript, Vercel
+            featuring drag-and-resize panels, switchable data charts, docked
+            navigation, saved workspace layouts, and full keyboard accessibility.
+            Generic names are used for privacy protection.
           </p>
         </li>
         <li>
           <div class="entry-head">
-            <h3>PetPlus Workforce</h3>
-            <span class="sep">|</span><span class="where">for Pet Plus</span>
-            <a class="url" href="https://petplus-workforce-pwa.vercel.app"
-              >petplus-workforce-pwa.vercel.app</a
-            >
-          </div>
-          <p>
-            Built an installable staff PWA for shift rosters, clock-ins and
-            daily store routines, with Google OAuth 2.0 authentication and
-            Supabase.
-          </p>
-          <p class="tools">
-            <span class="label">Tools</span>React, Supabase, Google Sign-In
-            (OAuth 2.0), PWA, Vercel
-          </p>
-        </li>
-        <li>
-          <div class="entry-head">
-            <h3>SIN Esports</h3>
+            <h3>SIN Esports <span class="project-subtitle">— Interactive WebGL Platform</span></h3>
             <a class="url" href="https://sin-esports.com">sin-esports.com</a>
           </div>
-          <p>
-            Developed a WebGL site for a South African esports organisation,
-            featuring team divisions, limited clothing drops and live Twitch
-            embeds.
-          </p>
           <p class="tools">
-            <span class="label">Tools</span>Nuxt, Vue, Three.js (WebGL), GSAP,
-            Twitch embeds, Cloudflare
+            <span class="label">Tools</span><span class="tools-list">Nuxt, Vue, Three.js (WebGL), GSAP, Twitch Embeds, Cloudflare</span>
+          </p>
+          <p>
+            Developed a custom WebGL experience for a South African esports
+            organisation, featuring interactive team divisions, limited clothing
+            drops, fluid GSAP motion, and live Twitch stream embeds.
           </p>
         </li>
         <li>
           <div class="entry-head">
-            <h3>Chiisai Games</h3>
+            <h3>Chiisai Games <span class="project-subtitle">— 3D Browser &amp; Custom Desktop OS UI</span></h3>
             <a class="url" href="https://chiisaigames.pixelatedindustries.com"
               >chiisaigames.pixelatedindustries.com</a
             >
           </div>
-          <p>
-            Designed the UI in TresJS and Three.js to create a unique,
-            immersive 3D site where users can browse and pick games to play.
-            Also built a custom desktop environment for the user.
-          </p>
           <p class="tools">
-            <span class="label">Tools</span>Nuxt, Vue, Colyseus (WebSockets),
-            Cloudflare
+            <span class="label">Tools</span><span class="tools-list">Nuxt, Vue, TresJS, Three.js, Colyseus (WebSockets), Cloudflare</span>
+          </p>
+          <p>
+            Designed an immersive 3D UI in TresJS and Three.js paired with a
+            custom virtual desktop environment where users can browse and launch
+            multiplayer web games in real time.
           </p>
         </li>
       </ul>
     </section>
 
-    <section class="skills">
-      <h2>Skills</h2>
-      <p>
-        <span class="label">Design</span>UI/UX design, user-centred design,
-        responsive web design, interaction design, keyboard accessibility
-      </p>
-      <p>
-        <span class="label">Frontend</span>HTML, CSS, JavaScript, TypeScript,
-        Vue, Nuxt, React, Angular, Tailwind CSS
-      </p>
-      <p>
-        <span class="label">Backend &amp; Data</span>Supabase, Firebase, SQL,
-        REST APIs, OAuth 2.0, Colyseus, WebSockets, Lightspeed POS, Shopify
-      </p>
-      <p>
-        <span class="label">Languages</span>Python, C#, Java, PowerShell, Bash
-      </p>
-      <p>
-        <span class="label">Cloud &amp; DevOps</span>Cloudflare, Vercel,
-        Netlify, Microsoft Azure, Docker, Git, GitHub
-      </p>
-      <p>
-        <span class="label">Systems</span>Windows Server, Microsoft 365, Google
-        Workspace administration, SSO, SAML, OAuth, LDAP
-      </p>
+    <section>
+      <h2>Education</h2>
+      <ul class="education-list">
+        <li>
+          <div class="entry-head">
+            <h3>Bachelor of Computer Science</h3>
+            <span class="sep">|</span><span class="where">Varsity College</span>
+            <span class="dates">2022 – 2025</span>
+          </div>
+        </li>
+        <li>
+          <div class="entry-head">
+            <h3>Higher Certificate in Information &amp; Communication Technology</h3>
+            <span class="sep">|</span><span class="where">Cape Peninsula University of Technology</span>
+            <span class="dates">2021</span>
+          </div>
+        </li>
+      </ul>
     </section>
   </body>
 </html>
